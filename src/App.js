@@ -1,17 +1,9 @@
 import React, { Component } from 'react';
+import MyComponenet from './MyComponent'; // MyComponent 파일을 불러옵니다.
 class App extends Component {
   render() {
-    const text = '이랑';
-    const condition = true;
-
     return (
-      <div>
-        <h1>hi react</h1>
-        <h2>{text}</h2>
-        {
-          condition ? '참' : '거짓'
-        }
-      </div>
+      <MyComponenet/>
     );
   }
 }
