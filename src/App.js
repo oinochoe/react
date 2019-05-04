@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import styles from './App.css';
+
+console.log(styles); // 콘솔에 무엇이 출력되는지 확인해보세요.
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="lgoo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code> src/App.js</code> and save to reload
-        </p>
+      <div className={styles.box}>
+      
       </div>
     );
   }
