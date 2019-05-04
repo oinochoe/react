@@ -106,7 +106,10 @@ module.exports = function(webpackEnv) {
         },
       },
       {
-        loader: require.resolve
+        loader: require.resolve('sass-loader'),
+        options: {
+          // TODO : 
+        },
       },
     ].filter(Boolean);
     if (preProcessor) {
