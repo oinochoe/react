@@ -78,8 +78,6 @@ module.exports = function(webpackEnv) {
       },
       {
         loader: require.resolve('css-loader'),
-        modules:true,
-        localIdentName: '[path][name]__[local]--[hash:base64:5]',
         options: cssOptions,
       },
       {
