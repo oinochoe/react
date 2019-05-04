@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
+import classNames from 'classnames/bind';
 import styles from './App.css';
-
-console.log(styles); // 콘솔에 무엇이 출력되는지 확인해보세요.
+const cx = classNames.bind(styles);
 
 class App extends Component {
   render() {
+    const isBlue = true;
     return (
-      <div className={styles.box}>
-      
+
+      <div className={cx('box', {blue: isBlue})}>
+        
       </div>
     );
   }

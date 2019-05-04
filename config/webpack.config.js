@@ -105,6 +105,9 @@ module.exports = function(webpackEnv) {
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
       },
+      {
+        loader: require.resolve
+      },
     ].filter(Boolean);
     if (preProcessor) {
       loaders.push({
