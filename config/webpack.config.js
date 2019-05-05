@@ -103,12 +103,6 @@ module.exports = function(webpackEnv) {
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
       },
-      {
-        loader: require.resolve('sass-loader'),
-        options: {
-          includePaths: [path.styles]
-        },
-      },
     ].filter(Boolean);
     if (preProcessor) {
       loaders.push({
@@ -426,13 +420,13 @@ module.exports = function(webpackEnv) {
             {
               test: sassRegex,
               exclude: sassModuleRegex,
-              use: getStyleLoaders(
-                {
-                  importLoaders: 2,
-                  sourceMap: isEnvProduction && shouldUseSourceMap,
-                },
-                'sass-loader'
-              ),
+              use: getStyleLoaders({importLoaders: 2,}).concat({
+                loader: require.resolve('sass-loader'),
+                options: {
+                  includePaths: [paths.appSrc + '/styles'],
+                  data: `@import 'utils';` // 참고로 data 옵션은 모든 scss 파일에 해당 라인을 추가시켜주는 기능입니다.
+                }
+              }),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
               // Remove this when webpack adds a warning or an error for this.
