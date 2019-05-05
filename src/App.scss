@@ -1,0 +1,31 @@
+$size: 100px;
+
+@mixin place-at-center() {
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.box {
+    display: inline-block;
+    width: $size;
+    height: $size;
+    border: 1px solid black;
+    position: fixed;
+    @include place-at-center();
+    &.blue {
+        background: blue;
+    }
+    &:hover {
+        background: yellow
+    }
+    &:active {
+        background: red;
+    }
+    .box-inside{
+        position: absolute;
+        background:black;
+        width: $size/2;
+        height: $size/2;
+        @include place-at-center();
+    }
+}
