@@ -1,1 +1,9 @@
 @import '~open-color/open-color';
+
+$size: 100px;
+
+@mixin place-at-center() {
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
