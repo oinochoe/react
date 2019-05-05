@@ -9,14 +9,14 @@
     padding-top: 2rem;
     // 웹 브라우저의 크기가 768px 미만일 때는
     @media(max-width: 768px) {
-        margin-top: 1rem;
         width: calc(100% - 2rem); // 양 옆에 1rem의 여백을 남기고 꽉 채워줍니다.
+        margin-top: 1rem;
     }
     h1 {
         text-align: center;
         font-size: 4rem;
-        font-weight: 300;
-        margin: 0;
+        font-weight: 300; 
+        margin: 0; 
     }
     .content {
         margin-top: 2rem; 
