@@ -106,7 +106,7 @@ module.exports = function(webpackEnv) {
       {
         loader: require.resolve('sass-loader'),
         options: {
-          // TODO : 
+          includePaths: [path.styles]
         },
       },
     ].filter(Boolean);
