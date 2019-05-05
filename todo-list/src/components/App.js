@@ -4,13 +4,29 @@ import TodoInput from './TodoInput';
 import TodoList from './TodoList';
 
 class App extends Component {
+    state = {
+        input: '' //input 값 정의
+    }
+
+    handleChange = (e) => {
+        const {value} = e.target;
+        this.setState({
+            input:value
+        });
+    }
+
     render() {
+        const { input } = this.state;
+        const {
+            handleChange
+        } = this;
+
         return (
             <PageTemplate>
-                <TodoInput/>
+                <TodoInput onChange={handleChange} value={input} />
                 <TodoList/>
             </PageTemplate>
-        )
+        );
     }
 }
 
