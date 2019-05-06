@@ -1,1 +1,1 @@
-gitignore edit
+[TodoList] TodoInput state 및 메서드 만들기

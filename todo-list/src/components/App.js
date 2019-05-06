@@ -5,18 +5,23 @@ import TodoList from './TodoList';
 
 class App extends Component {
     state = {
-        input: '' //input 값 정의
+        input: '', //input 값 정의
+        // 일정 데이터 초깃값
+        todos: [
+            { id: 0, text: '리액트 공부하기', done: true },
+            { id: 1, text: '컴포넌트 스타일링하기', done: false }
+        ]
     }
 
     handleChange = (e) => {
-        const {value} = e.target;
+        const { value } = e.target;
         this.setState({
-            input:value
+            input: value
         });
     }
 
     render() {
-        const { input } = this.state;
+        const { input, todos } = this.state;
         const {
             handleChange
         } = this;
@@ -24,7 +29,7 @@ class App extends Component {
         return (
             <PageTemplate>
                 <TodoInput onChange={handleChange} value={input} />
-                <TodoList/>
+                <TodoList todos={todos} />
             </PageTemplate>
         );
     }
