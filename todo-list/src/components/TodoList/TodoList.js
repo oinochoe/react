@@ -13,6 +13,7 @@ class TodoList extends Component {
                 </TodoItem>
             )
         );
+        
         return (
             <div>
                 {todoList}
