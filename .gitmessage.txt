@@ -1,1 +1,1 @@
-[React-redux] 불필요한 파일 제거 후 프로젝트 세팅 완료
+[React-redux] 기본적인 틀 만들어서 Counter 앱 초기 세팅
