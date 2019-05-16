@@ -4,5 +4,22 @@ import PropTypes from 'prop-types';
 import './Buttons.css';
 
 const Buttons = ({onCreate, onRemove}) => {
-    // 진행중 현재 작동 안함 상태
+    return (
+        <div className="Buttons">
+            <div className="btn add" onClick={onCreate}>생성</div>
+            <div className="btn remove" onClick={onRemove}>제거</div>
+        </div>
+    );
 }
+
+Buttons.propTypes = {
+    onCreate: PropTypes.func,
+    onRemove: PropTypes.func
+};
+
+Buttons.defaultProps = {
+    onCreate: () => console.warn('onCreate not defined'),
+    onRemove: () => console.warn('onRemove not defeind')
+};
+
+export default Buttons;

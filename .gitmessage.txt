@@ -1,1 +1,1 @@
-[React-redux] 기본적인 틀 만들어서 Counter 앱 초기 세팅
+[React-redux] 리듀서를 사용하여 카운터 함수 구현
