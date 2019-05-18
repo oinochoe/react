@@ -18,7 +18,7 @@ function counter(state = initialState, action) {
     switch (action.type) {
         case types.CREATE:
             return {
-                counter: [
+                counters: [
                     ...counters,
                     {
                         color: action.color,
