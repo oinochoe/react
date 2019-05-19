@@ -1,1 +1,1 @@
-[React-redux] App 컴포넌트 수정하여 기능 작동 완료
+[React-redux] App 컴포넌트 수정하여 기능 작동 완료 가 안되던 현상 수정
