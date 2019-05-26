@@ -1,1 +1,1 @@
-[React-redux] redux-actions 설치
+[todo-list] adjust redux-actions(input 모듈 완료)
