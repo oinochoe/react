@@ -36,7 +36,7 @@ class TodoInputContainer extends Component {
         const { handleChange, handleInsert } = this;
         return (
             <TodoInput
-                onChnage={handleChange}
+                onChange={handleChange}
                 onInsert={handleInsert}
                 value={value}
             />
@@ -51,7 +51,7 @@ export default connect(
     }),
     (dispatch) => ({
         InputActions: bindActionCreators(inputActions, dispatch),
-        TodoActions: bindActionCreators(todosActions, dispatch)
+        TodosActions: bindActionCreators(todosActions, dispatch)
         /* bindActionCreators를 사용하면 자동으로 다음 작업들을 합니다.
             {
                 actionsCreator: (...params) => dispatch(actionCreator(...params))
