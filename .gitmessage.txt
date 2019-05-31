@@ -1,1 +1,1 @@
-[redux-starter] redux 로거 사용과 redux-thunk의 설치
+[redux-starter] redux-thunk 적용 후 카운터
