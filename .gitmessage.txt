@@ -1,1 +1,1 @@
-[redux-starter] middleware 직접 만들기 셋팅
+[redux-starter] redux 로거 사용과 redux-thunk의 설치
