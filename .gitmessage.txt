@@ -1,1 +1,1 @@
-[redux-starter] redux-thunk 적용 후 카운터
+[redux-starter] axios 설치하여 응답값 확인 및 리덕스 만듦
