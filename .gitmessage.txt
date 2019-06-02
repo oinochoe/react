@@ -1,1 +1,1 @@
-[redux-starter] redux-promise-middleware 사용
+[redux-starter] redux-pender 사용 완료

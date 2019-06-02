@@ -25,8 +25,9 @@ const initialState = {
 
 const reducer = handleActions({
 	// 다른 일반 액션들을 관리...
+	// pender로도 관리 가능하지만 applyPenders로 많은 penders를 관리할 수 있다.
 	...pender({
-		// pender로도 관리 가능하지만 applyPenders로 많은 penders를 관리할 수 있다.
+		
 	})
 	
 }, initialState);
@@ -46,6 +47,14 @@ export default applyPenders(reducer, [
 				data: {
 					title,
 					body
+				}
+			}
+		},
+		onCancel: (state, action) => {
+			return {
+				data: {
+					title: '취소됨',
+					body: '취소됨'
 				}
 			}
 		}

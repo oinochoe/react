@@ -6,10 +6,21 @@ import * as postActions from './modules/post';
 
 class App extends Component {
 
+    cancelRequest = null
+
+    handleCancel = () => {
+        if(this.cancelRequest) {
+            this.cancelRequest();
+            this.cancelRequest = null;
+        }
+    }
+
     loadData = async () => {
         const { PostActions, number } = this.props;
         try {
-            const response = await PostActions.getPost(number);
+            const p = PostActions.getPost(number);
+            this.cancelRequest = p.cancel;
+            const response = await p;
             console.log(response)
         } catch(e) {
             console.log(e);
@@ -24,6 +35,11 @@ class App extends Component {
         // 이전 Number와 현재 Number가 다르면 요청을 시작함...
         if(this.props.number !== prevProps.number) {
             this.loadData();
+            window.addEventListener('keyup', (e) => {
+                if(e.key === 'Escape') {
+                    this.handleCancel();
+                }
+            })
         }
     }
 
