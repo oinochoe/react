@@ -1,1 +1,1 @@
-[redux-starter] 컴포넌트에서 액션으로 웹 요청 시도
+[redux-starter] async await 사용
