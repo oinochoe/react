@@ -1,1 +1,1 @@
-[redux-starter] post 오류수정
+[redux-starter] 컴포넌트에서 액션으로 웹 요청 시도
