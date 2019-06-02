@@ -1,1 +1,1 @@
-[redux-starter] axios 설치하여 응답값 확인 및 리덕스 만듦
+[redux-starter] 루트 리듀서에도 반영완료

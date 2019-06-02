@@ -65,7 +65,7 @@ export default handleActions({
 				body
 			}
 		}
-	}.
+	},
 	[GET_POST_FAILURE]: (state, action) => {
 		return {
 			...state,
