@@ -1,1 +1,1 @@
-[redux-starter] 루트 리듀서에도 반영완료
+[redux-starter] post 오류수정
