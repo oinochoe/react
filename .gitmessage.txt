@@ -1,1 +1,1 @@
-[redux-starter] redux-pender 사용 완료
+[redux-starter] redux-pender `onCnacel` 사용
