@@ -1,1 +1,1 @@
-[react-router] 라우터 설정으로 페이지 나누기
+[react-router] params로 파라미터 받기
