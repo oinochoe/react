@@ -1,1 +1,1 @@
-[redux-starter] redux-pender `onCnacel` 사용
+[react-router] 라우터 설정으로 페이지 나누기
