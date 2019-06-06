@@ -6,7 +6,7 @@ const Home = ({history}) => {
             <h2>?</h2>
             <button onClick={()=> {
                 history.push('/about/javascript')
-            }}> ?????? ???? ?? </button>
+            }}> 자바스크릡트 사용하여 이동 </button>
         </div>
     );
 };
