@@ -1,1 +1,1 @@
-[react-router] query-string 사용하여 query 값으로 돔 변경 및 메뉴 Link 사용
+[react-router] NavLink 사용하여 activeStyle 적용해보자~

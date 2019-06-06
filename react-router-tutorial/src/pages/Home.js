@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Home = () => {
+const Home = ({history}) => {
     return (
         <div>
-            <h2>홈</h2>
+            <h2>?</h2>
+            <button onClick={()=> {
+                history.push('/about/javascript')
+            }}> ?????? ???? ?? </button>
         </div>
     );
 };
