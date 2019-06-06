@@ -1,1 +1,1 @@
-[react-router] params로 파라미터 받기
+[react-router] query-string 사용하여 query 값으로 돔 변경 및 메뉴 Link 사용
