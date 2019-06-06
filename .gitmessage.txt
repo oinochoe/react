@@ -1,1 +1,1 @@
-[react-router] history 사용하여 javscript 라우팅
+[react-router] 인코딩 수정
