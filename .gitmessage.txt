@@ -1,1 +1,1 @@
-[react-router] Posts 설정 완료
+[react-router]  location과 match 차이점 알아보기
