@@ -1,1 +1,1 @@
-[react-router] posts 라우팅 작업
+[react-router] Posts 설정 완료
