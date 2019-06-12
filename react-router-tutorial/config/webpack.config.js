@@ -139,13 +139,23 @@ module.exports = function(webpackEnv) {
       // the line below with these two lines if you prefer the stock client:
       // require.resolve('webpack-dev-server/client') + '?/',
       // require.resolve('webpack/hot/dev-server'),
-      isEnvDevelopment &&
-        require.resolve('react-dev-utils/webpackHotDevClient'),
+      /* isEnvDevelopment &&
+        require.resolve('react-dev-utils/webpackHotDevClient'), */
       // Finally, this is your app's code:
-      paths.appIndexJs,
+      /* paths.appIndexJs, */
       // We include the app code last so that if there is a runtime error during
       // initialization, it doesn't blow up the WebpackDevServer client, and
       // changing JS code would still trigger a refresh.
+      // edit 19-06-12
+      app : [
+        require.resolve('react-dev-utills/webpackHotDevClient'), paths.appIndexJs,
+      ],
+      vendor : [
+        require.resolve('.polyfills'),
+        'react',
+        'react-dom',
+        'react-router-dom'
+      ]
     ].filter(Boolean),
     output: {
       // The build folder.
