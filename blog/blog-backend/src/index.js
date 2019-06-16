@@ -2,11 +2,10 @@ const Koa = require('koa');
 
 const App = new Koa();
 
-App.use((ctx, next) => {
+App.use(async (ctx, next) => {
   console.log(1);
-  next().then(() => {
-    console.log('bye');
-  });
+  await next();
+  console.log('bye');
 });
 
 App.use((ctx, next) => {
