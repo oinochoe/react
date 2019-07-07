@@ -60,5 +60,24 @@ exports.remove = async (ctx) => {
   }
 };
 
-exports.update = (ctx) => {
+/* PATCH /api/posts/:id
+   { title, body, tags }
+ */
+exports.update = async (ctx) => {
+  const { id } = ctx.params;
+  try {
+    const post = await Post.findByIdAndUpdate(id, ctx.request.body, {
+      new: true
+      // 이 값을 설정해야 업데이트된 객체를 반환합니다.
+      // 설정하지 않으면 업데이트되기 전의 객체를 반환합니다.
+    }).exec();
+    // 포스트가 존재하지 않을 때
+    if (!post) {
+      ctx.status = 404;
+      return;
+    }
+    ctx.body = post;
+  } catch (e) {
+    ctx.throw(e, 500);
+  }
 };
