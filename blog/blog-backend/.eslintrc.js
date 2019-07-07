@@ -1,5 +1,12 @@
+const path = require('path');
+
 module.exports = {
     "extends": "airbnb-base",
+    "settings" : {
+        "import/resolver"L {
+          node: { paths: [path.resolve('./src')] }
+        },
+    },
     "env": {
         "browser": true,
         "es6": true
