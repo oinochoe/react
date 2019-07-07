@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     "extends": "airbnb-base",
     "settings" : {
-        "import/resolver"L {
+        "import/resolver": {
           node: { paths: [path.resolve('./src')] }
         },
     },
