@@ -31,10 +31,33 @@ exports.list = async (ctx) => {
   }
 };
 
-exports.read = (ctx) => {
+/* GET /api/posts/:id
+ */
+exports.read = async (ctx) => {
+  const { id } = ctx.params;
+  try {
+    const post = await Post.findById(id).exec();
+    // 포스트가 존재하지 않습니다.
+    if (!post) {
+      ctx.status = 404;
+      return;
+    }
+    ctx.body = post;
+  } catch (e) {
+    ctx.throw(e, 500);
+  }
 };
 
-exports.remove = (ctx) => {
+/* DELETE /api/posts/:id
+ */
+exports.remove = async (ctx) => {
+  const { id } = ctx.params;
+  try {
+    await Post.findByIdAndRemove(id).exec();
+    ctx.status = 204;
+  } catch (e) {
+    ctx.throw(e, 500);
+  }
 };
 
 exports.update = (ctx) => {
