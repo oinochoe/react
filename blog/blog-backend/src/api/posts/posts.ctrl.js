@@ -3,7 +3,7 @@ const { ObjectId } = require('mongoose').Types;
 exports.checkObjectId = (ctx, next) => {
   const { id } = ctx.params;
 
-  // 검증 실패
+  // 검증 실패 일시
   if (!ObjectId.isValid(id)) {
     ctx.status = 400;
     return null;
