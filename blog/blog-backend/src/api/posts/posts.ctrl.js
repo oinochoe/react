@@ -13,11 +13,29 @@ exports.checkObjectId = (ctx, next) => {
 };
 
 const Post = require('models/post');
+const Joi = require('joi');
 
 /* POST /api/posts
    { title, body, tags }
  */
 exports.write = async (ctx) => {
+  // 객체가 지닌 값들을 검증
+  const schema = Joi.object().keys({
+    title: Joi.string().required(), // 뒤에 required를 붙여 주면 필수 항목이라는 의미
+    body: Joi.string().required(),
+    tags: Joi.array().items(Joi.string()).required() // 문자열 배열
+  });
+
+  // 첫 번째 파라미터는 검증할 객체, 두 번째는 스키마
+  const result = Joi.validate(ctx.request.body, schema);
+
+  // 오류가 발생하면 오류 내용 응답
+  if (result.error) {
+    ctx.status = 400;
+    ctx.body = result.error;
+    return;
+  }
+
   const { title, body, tags } = ctx.request.body;
 
   // 새 Post 인스턴스를 만듭니다.
