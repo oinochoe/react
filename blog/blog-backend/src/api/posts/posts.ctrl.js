@@ -55,8 +55,22 @@ exports.write = async (ctx) => {
 /* GET /api/posts
  */
 exports.list = async (ctx) => {
+  // page가 주어지지 않았다면 1로 간주
+  // query는 문자열 형태로 받아 오므로 숫자로 변환
+  const page = parseInt(ctx.query.page || 1, 10);
+
+  // 잘못된 페이지가 주어졌다면 오류
+  if (page < 1) {
+    ctx.status = 400;
+    return;
+  }
+
   try {
-    const posts = await Post.find().exec();
+    const posts = await Post.find()
+      .sort({ _id: -1 })
+      .limit(10)
+      .skip((page - 1) * 10)
+      .exec();
     ctx.body = posts;
   } catch (e) {
     ctx.throw(e, 500);
