@@ -1,3 +1,1 @@
-import __ComponentName__ from './__ComponentName__';
-
-export default __ComponentName__;
+export { default } from './PageTemplate';
