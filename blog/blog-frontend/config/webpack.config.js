@@ -78,13 +78,7 @@ module.exports = function(webpackEnv) {
       },
       {
         loader: require.resolve('css-loader'),
-        options: {
-          importLoaders: 1,
-          minimize:true,
-          sourceMap: shouldUseSourceMap,
-          localIdentName: '[name]__[local]___[hash:base64:5]',
-          modules:1,
-        },
+        options: cssOptions,
       },
       {
         // Options for PostCSS as we reference these options twice
@@ -110,13 +104,10 @@ module.exports = function(webpackEnv) {
           ],
           sourceMap: isEnvProduction && shouldUseSourceMap,
         },
-      },
+      },      
       {
-        // noel's sass-loader setting
         loader: require.resolve('sass-loader'),
-        options: {
-          includePaths: [paths.globalStyles]
-        },
+        options: cssOptions
       },
     ].filter(Boolean);
     if (preProcessor) {
@@ -414,6 +405,9 @@ module.exports = function(webpackEnv) {
               use: getStyleLoaders({
                 importLoaders: 1,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
+                minimize: true,
+                localIdentName: '[name]__[local]___[hash:base64:5]',
+                modules:1,
               }),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -460,7 +454,8 @@ module.exports = function(webpackEnv) {
                   importLoaders: 2,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                   modules: true,
-                  getLocalIdent: getCSSModuleLocalIdent,
+                  getLocalIdent: getCSSModuleLocalIdent,                  
+                  includePaths: [paths.globalStyles],
                 },
                 'sass-loader'
               ),
