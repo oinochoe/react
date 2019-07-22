@@ -4,9 +4,9 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const ListWrapper = () => (
-  <div>
-    ListWrapper
+const ListWrapper = ({children}) => (
+  <div className={cx('list-wrapper')}>
+    {children}
   </div>
 );
 export default ListWrapper;
