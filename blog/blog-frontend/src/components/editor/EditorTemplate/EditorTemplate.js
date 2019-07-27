@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styles from './EditorTemplate.scss';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-const EditorTemplate = () => (
-  <div>
-    EditorTemplate
-  </div>
-);
+class EditorTemplate extends Component {
+  render() {
+    return (
+      <div>
+        EditorTemplate
+      </div>
+    );
+  }
+}
+
 export default EditorTemplate;

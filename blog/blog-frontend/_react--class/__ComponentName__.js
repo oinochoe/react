@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import styles from './EditorPane.scss';
+import styles from './__ComponentName__.scss';
 import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 
-class EditorPane extends Component {
+class __ComponentName__ extends Component {
   render() {
     return (
       <div>
-        EditorPane
+        __ComponentName__
       </div>
     );
   }
 }
 
-export default EditorPane;
+export default __ComponentName__;
