@@ -142,5 +142,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "@types/codemirror": "0.0.76"
   }
 }

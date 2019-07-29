@@ -403,11 +403,10 @@ module.exports = function(webpackEnv) {
               test: cssRegex,
               exclude: cssModuleRegex,
               use: getStyleLoaders({
-                importLoaders: 1,
+                importLoaders: true,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
-                minimize: true,
+                modules:false, // module false로 안하니까 자꾸 에러가난다.
                 localIdentName: '[name]__[local]___[hash:base64:5]',
-                modules:1,
               }),
               // Don't consider CSS imports dead code even if the
               // containing package claims to have no side effects.
@@ -420,7 +419,7 @@ module.exports = function(webpackEnv) {
             {
               test: cssModuleRegex,
               use: getStyleLoaders({
-                importLoaders: 1,
+                importLoaders: true,
                 sourceMap: isEnvProduction && shouldUseSourceMap,
                 modules: true,
                 getLocalIdent: getCSSModuleLocalIdent,
@@ -434,7 +433,7 @@ module.exports = function(webpackEnv) {
               exclude: sassModuleRegex,
               use: getStyleLoaders(
                 {
-                  importLoaders: 2,
+                  importLoaders: true,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                 },
                 'sass-loader'
@@ -451,7 +450,7 @@ module.exports = function(webpackEnv) {
               test: sassModuleRegex,
               use: getStyleLoaders(
                 {
-                  importLoaders: 2,
+                  importLoaders: true,
                   sourceMap: isEnvProduction && shouldUseSourceMap,
                   modules: true,
                   getLocalIdent: getCSSModuleLocalIdent,                  
