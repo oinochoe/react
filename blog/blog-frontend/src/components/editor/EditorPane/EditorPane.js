@@ -82,7 +82,7 @@ class EditorPane extends Component {
         <div className={cx('tags')}>
           <div className={cx('description')}>태그</div>
           <input
-            name="tgas"
+            name="tags"
             placeholder="태그를 입력하세요 (쉽표로 구분)"
             value={tags}
             onChange={handleChange}
