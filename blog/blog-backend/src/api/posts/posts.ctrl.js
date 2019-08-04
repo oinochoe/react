@@ -97,6 +97,7 @@ exports.read = async (ctx) => {
       ctx.status = 404;
       return;
     }
+    ctx.body = post;
   } catch (e) {
     ctx.throw(e, 500);
   }
