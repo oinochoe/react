@@ -42,7 +42,7 @@ class ListContainer extends Component {
 
 export default connect(
   (state) => ({
-    lastPage: state.list.get('last-page'),
+    lastPage: state.list.get('lastPage'),
     posts: state.list.get('posts'),
     loading: state.pender.pending['list/GET_POST_LIST']
   }),
