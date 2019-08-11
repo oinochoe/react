@@ -21,7 +21,7 @@ class ListContainer extends Component {
 
   componentDidUpdate(prevProps, prevState) {
     // 페이지/태그가 바뀔 때 리스트를 다시 불러옵니다.
-    if(prevProps.page !== this.props.age || prevProps.tag !== this.props.tag) {
+    if(prevProps.page !== this.props.page || prevProps.tag !== this.props.tag) {
       this.getPostList();
       // 스크롤바를 맨 위로 올립니다.
       document.documentElement.scrollTop = 0;
