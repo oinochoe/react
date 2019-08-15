@@ -61,7 +61,7 @@ exports.list = async (ctx) => {
   const { tag } = ctx.query;
 
   const query = tag ? {
-    tags : tag // tags 배열에 tag를 가진 포스트 찾기
+    tags: tag // tags 배열에 tag를 가진 포스트 찾기
   } : {};
 
   // 잘못된 페이지가 주어졌다면 오류

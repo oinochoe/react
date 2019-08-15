@@ -6,7 +6,7 @@ import Button from 'components/common/Button';
 
 const cx = classNames.bind(styles);
 
-const Header = (postId, onRemove) => (
+const Header = ({postId, onRemove}) => (
   <header className={cx('header')}>
     <div className={cx('header-content')}>
       <div className={cx('brand')}>
