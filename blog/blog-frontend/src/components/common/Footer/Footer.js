@@ -7,8 +7,8 @@ const cx = classNames.bind(styles);
 
 const Footer = () => (
   <footer className={cx('footer')}>
-    <Link to="/" className={cx('brand')}>reactblog</Link>
-    <div className={cx('admin-login')}>관리자 로그인</div>
+    <Link to="/" className={cx('brand')}>&copy; Irang &amp; Yeongmin</Link>
+    <div className={cx('admin-login')}>Admin Login</div>
   </footer>
 );
 
