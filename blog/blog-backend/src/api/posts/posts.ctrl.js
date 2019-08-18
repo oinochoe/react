@@ -12,6 +12,14 @@ exports.checkObjectId = (ctx, next) => {
   return next(); // next를 리턴해야 ctx.body가 제대로 작동합니다.
 };
 
+exports.checkLogin = (ctx, next) => {
+  if (!ctx.session.logged) {
+    ctx.status = 401; // Unauthorized
+    return null;
+  }
+  return next();
+};
+
 const Post = require('models/post');
 const Joi = require('joi');
 
